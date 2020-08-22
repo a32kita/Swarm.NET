@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Swarm.NET", "Swarm.NET\Swarm.NET.shproj", "{A7E4257A-EDE8-456F-B25E-E4EC7C681D2F}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Swarm.NET\Swarm.NET.projitems*{a7e4257a-ede8-456f-b25e-e4ec7c681d2f}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C012D78-BA29-4D01-950E-BD3DFC3BD97D}
+	EndGlobalSection
+EndGlobal
