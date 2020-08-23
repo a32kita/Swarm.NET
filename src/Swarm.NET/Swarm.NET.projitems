@@ -9,5 +9,12 @@
     <Import_RootNamespace>SwarmDotNET</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\UserAccessToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InternalUtilities\UriUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SwarmClientInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SwarmService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SwarmServiceException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SwarmServiceJsonException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SwarmServiceRestException.cs" />
   </ItemGroup>
 </Project>
