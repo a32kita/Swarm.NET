@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
+using SwarmDotNET.Endpoints;
 using SwarmDotNET.Entities;
 using SwarmDotNET.InternalUtilities;
 
@@ -17,14 +18,41 @@ namespace SwarmDotNET
         // 非公開フィールド
         private SwarmClientInfo _clientInfo;
         private HttpClient _httpClient;
+        private UserAccessToken _accessToken;
+        private EventHandler<SwarmServiceAuthorizeEventArgs> _authorized;
 
 
         // 公開プロパティ
 
         public UserAccessToken AccessToken
         {
+            get => this._accessToken;
+            set
+            {
+                this._accessToken = value;
+                this._authorized?.Invoke(this, new SwarmServiceAuthorizeEventArgs() { AccessToken = value });
+            }
+        }
+
+        public VenuesApi Venues
+        {
             get;
             private set;
+        }
+
+        public UsersApi Users
+        {
+            get;
+            private set;
+        }
+
+        
+        // 公開イベント
+
+        public event EventHandler<SwarmServiceAuthorizeEventArgs> Authorized
+        {
+            add => this._authorized += value;
+            remove => this._authorized -= value;
         }
 
 
@@ -36,6 +64,17 @@ namespace SwarmDotNET
             this._httpClient = new HttpClient();
 
             this.AccessToken = null;
+
+            this.Venues = new VenuesApi(this);
+            this.Users = new UsersApi(this);
+        }
+
+
+        // 限定公開メソッド
+
+        internal HttpClient GetHttpClient()
+        {
+            return this._httpClient;
         }
 
 

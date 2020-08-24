@@ -14,6 +14,7 @@ namespace SwarmDotNET.Demo
         static void Main(string[] args)
         {
             var datFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Swarm.NET.dat");
+            var tokenFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Swarm.NET_token.dat");
 
             if (File.Exists(datFilePath) == false)
             {
@@ -32,18 +33,35 @@ namespace SwarmDotNET.Demo
 
             using (var swService = new SwarmService(clientInfo))
             {
-                Console.WriteLine("Please authorize this client;");
-                Console.WriteLine(swService.GetAuthorizationUri());
-                Console.WriteLine();
-                Console.WriteLine("Please input redirected uri;");
+                if (File.Exists(tokenFilePath))
+                {
+                    Console.WriteLine("Loading token file ...");
 
-                Console.Write("> ");
-                var redirectedUri = Console.ReadLine();
+                    using (var sr = new StreamReader(File.OpenRead(tokenFilePath)))
+                    {
+                        swService.AuthorizeWithUserAccessToken(new Entities.UserAccessToken() { Token = sr.ReadLine() });
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please authorize this client;");
+                    Console.WriteLine(swService.GetAuthorizationUri());
+                    Console.WriteLine();
+                    Console.WriteLine("Please input redirected uri;");
 
-                swService.AuthorizeWithRedirectedUriAsync(new Uri(redirectedUri)).Wait();
+                    Console.Write("> ");
+                    var redirectedUri = Console.ReadLine();
+
+                    swService.AuthorizeWithRedirectedUriAsync(new Uri(redirectedUri)).Wait();
+                }
 
                 Console.WriteLine("Authentication flow is completed.");
                 Console.WriteLine(swService.AccessToken.Token);
+                Console.WriteLine();
+
+                var me = swService.Users.GetSelf().Result;
+                Console.WriteLine("[me]");
+                Console.WriteLine("* Name: {0} {1}", me.FirstName, me.LastName);
 
                 Console.ReadLine();
             }

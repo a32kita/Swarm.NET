@@ -10,11 +10,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Endpoints\ApiBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Endpoints\UsersApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Endpoints\VenuesApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Friendship.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\FriendGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Photo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ResponseElements\MetaData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ResponseRoot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\UserAccessToken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)InternalUtilities\UriUtils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmClientInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SwarmServiceAuthorizeEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmServiceException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmServiceJsonException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmServiceRestException.cs" />
