@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,18 +13,30 @@ namespace SwarmDotNET.Demo
     {
         static void Main(string[] args)
         {
-            using (var swService = new SwarmService(new SwarmClientInfo()
+            var datFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Swarm.NET.dat");
+
+            if (File.Exists(datFilePath) == false)
             {
-                ClientId = "KWCZOZ5S5WGXNE054WLHNWZ0BJNRMHRS5FOCZASF15JRPQUP",
-                ClientSecret = "1I1CGA0UTKS2T0WFWPZR5YNN0QHFY3M2XSKFWS5RA34XNCXN",
-                AuthorizationRedirectUri = new Uri("http://www.a32kita.net/dummy/fsqauth"),
-            }))
+                Console.WriteLine("Please put client info file.");
+                Console.WriteLine(datFilePath);
+                Environment.Exit(1);
+            }
+
+            var clientInfo = new SwarmClientInfo();
+            using (var sr = new StreamReader(File.OpenRead(datFilePath)))
+            {
+                clientInfo.ClientId = sr.ReadLine();
+                clientInfo.ClientSecret = sr.ReadLine();
+                clientInfo.AuthorizationRedirectUri = new Uri(sr.ReadLine());
+            }
+
+            using (var swService = new SwarmService(clientInfo))
             {
                 Console.WriteLine("Please authorize this client;");
                 Console.WriteLine(swService.GetAuthorizationUri());
                 Console.WriteLine();
                 Console.WriteLine("Please input redirected uri;");
-                
+
                 Console.Write("> ");
                 var redirectedUri = Console.ReadLine();
 

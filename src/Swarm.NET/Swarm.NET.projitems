@@ -9,6 +9,8 @@
     <Import_RootNamespace>SwarmDotNET</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Endpoints\ApiBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Endpoints\VenuesApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\UserAccessToken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)InternalUtilities\UriUtils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmClientInfo.cs" />
