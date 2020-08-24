@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 using SwarmDotNET.Entities;
 using SwarmDotNET.InternalUtilities;
 
@@ -86,6 +87,11 @@ namespace SwarmDotNET
                     throw new SwarmServiceJsonException(ex, responseJson);
                 }
             }
+        }
+
+        public void AuthorizeWithUserAccessToken(UserAccessToken accessToken)
+        {
+            this.AccessToken = accessToken;
         }
 
         public void Dispose()
