@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+
 using SwarmDotNET.Entities;
 
 namespace SwarmDotNET.Endpoints
@@ -42,7 +43,7 @@ namespace SwarmDotNET.Endpoints
             this.ParentService.Authorized += (sender, e) => this.StandardParameters = new Dictionary<string, string>()
             {
                 { "oauth_token", this.ParentService.AccessToken.Token },
-                { "v", "20200824" },
+                { "v", "20230221" },
             };
         }
 

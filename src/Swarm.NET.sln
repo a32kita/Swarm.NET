@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30406.217
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Swarm.NET", "Swarm.NET\Swarm.NET.shproj", "{A7E4257A-EDE8-456F-B25E-E4EC7C681D2F}"
 EndProject
@@ -9,11 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2128F532
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swarm.NET.Demo", "Tests\Swarm.NET.Demo\Swarm.NET.Demo.csproj", "{3B6B0C77-5EBE-46A8-A56C-FC7D86171498}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swarm.NET-std21", "Swarm.NET-std21\Swarm.NET-std21.csproj", "{1649F8AC-1B55-4F32-BB31-B3F781A71AF4}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Swarm.NET\Swarm.NET.projitems*{3b6b0c77-5ebe-46a8-a56c-fc7d86171498}*SharedItemsImports = 4
-		Swarm.NET\Swarm.NET.projitems*{a7e4257a-ede8-456f-b25e-e4ec7c681d2f}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -23,6 +21,10 @@ Global
 		{3B6B0C77-5EBE-46A8-A56C-FC7D86171498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B6B0C77-5EBE-46A8-A56C-FC7D86171498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B6B0C77-5EBE-46A8-A56C-FC7D86171498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1649F8AC-1B55-4F32-BB31-B3F781A71AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1649F8AC-1B55-4F32-BB31-B3F781A71AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1649F8AC-1B55-4F32-BB31-B3F781A71AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1649F8AC-1B55-4F32-BB31-B3F781A71AF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +34,10 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C012D78-BA29-4D01-950E-BD3DFC3BD97D}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Swarm.NET\Swarm.NET.projitems*{1649f8ac-1b55-4f32-bb31-b3f781a71af4}*SharedItemsImports = 5
+		Swarm.NET\Swarm.NET.projitems*{3b6b0c77-5ebe-46a8-a56c-fc7d86171498}*SharedItemsImports = 4
+		Swarm.NET\Swarm.NET.projitems*{a7e4257a-ede8-456f-b25e-e4ec7c681d2f}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

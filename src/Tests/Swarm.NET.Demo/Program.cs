@@ -59,9 +59,16 @@ namespace SwarmDotNET.Demo
                 Console.WriteLine(swService.AccessToken.Token);
                 Console.WriteLine();
 
-                var me = swService.Users.GetSelf().Result;
+                var me = swService.Users.GetSelfAsync().Result;
                 Console.WriteLine("[me]");
                 Console.WriteLine("* Name: {0} {1}", me.FirstName, me.LastName);
+
+                var checkins = swService.Users.GetMyCheckinsAsync(5).Result;
+                //var checkins = swService.Users.GetCheckinsSelfDebug().Result;
+                foreach (var c in checkins)
+                {
+                    Console.WriteLine("* Checkin: {0} at {1}", c.Venue?.Name, c.CreatedAt);
+                }
 
                 Console.ReadLine();
             }
