@@ -4,6 +4,19 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>Swarm.NET</RootNamespace>
     <Nullable>enable</Nullable>
+    <Version>$([System.DateTime]::Now.ToString('0.yy.M.dHH'))-alpha-$([System.DateTime]::Now.ToString('mmss'))$([System.Guid]::NewGuid.ToString().Replace("-", "").Substring(0, 5))</Version>
+    <Authors>a32kita</Authors>
+    <Company>Explorers of the Binary World</Company>
+    <Product>Swarm.NET</Product>
+    <Title>Swarm.NET</Title>
+    <PackageId>Swarm.NET</PackageId>
+    <PackageProjectUrl>https://github.com/a32kita/Swarm.NET</PackageProjectUrl>
+    <Description>Swarm.NET is foursquare REST API client library for .NET / C# </Description>
+    <RepositoryUrl>https://github.com/a32kita/Swarm.NET</RepositoryUrl>
+    <PackageTags>swarm foursquare</PackageTags>
+    <AssemblyVersion>$([System.DateTime]::Now.ToString('0.yy.M.dHH'))</AssemblyVersion>
+    <FileVersion>$([System.DateTime]::Now.ToString('0.yy.M.dHH'))</FileVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <Import Project="..\Swarm.NET\Swarm.NET.projitems" Label="Shared" />
