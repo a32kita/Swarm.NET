@@ -43,7 +43,7 @@ namespace SwarmDotNET.Endpoints
             this.ParentService.Authorized += (sender, e) => this.StandardParameters = new Dictionary<string, string>()
             {
                 { "oauth_token", this.ParentService.AccessToken.Token },
-                { "v", "20230221" },
+                { "v", "20240101" },
             };
         }
 

@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>Swarm.NET</RootNamespace>
     <Nullable>enable</Nullable>
-    <Version>$([System.DateTime]::Now.ToString('0.yy.M.dHH'))-alpha-$([System.DateTime]::Now.ToString('mmss'))$([System.Guid]::NewGuid.ToString().Replace("-", "").Substring(0, 5))</Version>
+    <Version>$([System.DateTime]::Now.ToString('0.yy.M.dHH'))-alpha-$([System.DateTime]::Now.ToString('mm00'))$([System.Guid]::NewGuid.ToString().Replace("-", "").Substring(0, 5))</Version>
     <Authors>a32kita</Authors>
     <Company>Explorers of the Binary World</Company>
     <Product>Swarm.NET</Product>
@@ -22,7 +22,7 @@
   <Import Project="..\Swarm.NET\Swarm.NET.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
