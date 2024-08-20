@@ -43,7 +43,7 @@ namespace SwarmDotNET.Endpoints
             this.ParentService.Authorized += (sender, e) => this.StandardParameters = new Dictionary<string, string>()
             {
                 { "oauth_token", this.ParentService.AccessToken.Token },
-                { "v", "20240101" },
+                { "v", "20240801" },
             };
         }
 
@@ -55,6 +55,13 @@ namespace SwarmDotNET.Endpoints
             using (var hres = await this.ParentService.GetHttpClient().SendAsync(hreq))
             {
                 var hresContent = await hres.Content.ReadAsStringAsync();
+
+#if false
+                using (var fs = File.OpenWrite(Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "/debug_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff") + ".json"))
+                using (var sw = new StreamWriter(fs))
+                    sw.Write(hresContent);
+#endif
+
                 switch (hres.StatusCode)
                 {
                     case HttpStatusCode.OK:

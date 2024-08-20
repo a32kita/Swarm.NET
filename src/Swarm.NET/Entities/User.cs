@@ -50,6 +50,13 @@ namespace SwarmDotNET.Entities
             set;
         }
 
+        [JsonProperty(PropertyName = "handle")]
+        public string Handle
+        {
+            get;
+            set;
+        }
+
         [JsonProperty(PropertyName = "homeCity")]
         public string HomeCity
         {
