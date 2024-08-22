@@ -56,7 +56,7 @@ namespace SwarmDotNET.Endpoints
             {
                 var hresContent = await hres.Content.ReadAsStringAsync();
 
-#if false
+#if true
                 using (var fs = File.OpenWrite(Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "/debug_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff") + ".json"))
                 using (var sw = new StreamWriter(fs))
                     sw.Write(hresContent);

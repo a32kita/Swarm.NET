@@ -23,5 +23,11 @@ namespace SwarmDotNET
             get;
             set;
         }
+
+        public SwarmAcceptLanguage AcceptLanguage
+        {
+            get;
+            set;
+        }
     }
 }

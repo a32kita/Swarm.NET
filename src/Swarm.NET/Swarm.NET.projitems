@@ -23,7 +23,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\UserAccessToken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Venue.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\VenueLocation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\CheckinExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\VenueExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)InternalUtilities\UriUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SwarmAcceptLanguage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmClientInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwarmServiceAuthorizeEventArgs.cs" />

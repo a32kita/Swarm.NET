@@ -62,6 +62,9 @@ namespace SwarmDotNET
             this._clientInfo = clientInfo;
             this._httpClient = new HttpClient();
 
+            if (!String.IsNullOrEmpty(clientInfo?.AcceptLanguage?.AcceptLanguage))
+                this._httpClient.DefaultRequestHeaders.Add("Accept-Language", clientInfo.AcceptLanguage.AcceptLanguage);
+
             this.AccessToken = null;
 
             this.Venues = new VenuesApi(this);

@@ -7,6 +7,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
+using SwarmDotNET.Extensions;
+
 namespace SwarmDotNET.Demo
 {
     class Program
@@ -24,6 +26,7 @@ namespace SwarmDotNET.Demo
             }
 
             var clientInfo = new SwarmClientInfo();
+            clientInfo.AcceptLanguage = SwarmAcceptLanguage.PrioritizeJapanese;
             using (var sr = new StreamReader(File.OpenRead(datFilePath)))
             {
                 clientInfo.ClientId = sr.ReadLine();
@@ -67,7 +70,7 @@ namespace SwarmDotNET.Demo
                 //var checkins = swService.Users.GetCheckinsSelfDebug().Result;
                 foreach (var c in checkins)
                 {
-                    Console.WriteLine("* Checkin: {0} at {1}", c.Venue?.Name, c.CreatedAt);
+                    Console.WriteLine("* Checkin: {0}, JP = {1} at {2}", c.Venue?.Name, c.Venue.GetLocalName(), c.GetCheckinUTCDateTime().ToLocalTime());
                 }
 
                 Console.ReadLine();

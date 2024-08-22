@@ -77,5 +77,12 @@ namespace SwarmDotNET.Entities
             get;
             set;
         }
+
+        [JsonProperty(PropertyName = "formattedAddress")]
+        public string[] FormattedAddress
+        {
+            get;
+            set;
+        }
     }
 }
