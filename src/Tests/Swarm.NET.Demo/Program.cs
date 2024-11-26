@@ -73,6 +73,18 @@ namespace SwarmDotNET.Demo
                     Console.WriteLine("* Checkin: {0}, JP = {1} at {2}", c.Venue?.Name, c.Venue.GetLocalName(), c.GetCheckinUTCDateTime().ToLocalTime());
                 }
 
+                Console.WriteLine();
+                if (checkins.Count > 0)
+                {
+                    // Try to retrives checkin detail informations
+                    var c = swService.Checkins.GetCheckinDetailsAsync(checkins.First().Id).Result;
+
+                    Console.WriteLine("[Basic info]");
+                    Console.WriteLine("* Checkin: {0}, JP = {1} at {2}", c.Venue?.Name, c.Venue.GetLocalName(), c.GetCheckinUTCDateTime().ToLocalTime());
+                    Console.WriteLine("[URL with signature]");
+                    Console.WriteLine("{0}", c.CheckinShortUrl);
+                }
+
                 Console.ReadLine();
             }
         }

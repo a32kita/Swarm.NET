@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Endpoints\ApiBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Endpoints\CheckinsApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Endpoints\UsersApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Endpoints\VenuesApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Checkin.cs" />

@@ -45,6 +45,12 @@ namespace SwarmDotNET
             private set;
         }
 
+        public CheckinsApi Checkins
+        {
+            get;
+            private set;
+        }
+
         
         // 公開イベント
 
@@ -69,6 +75,7 @@ namespace SwarmDotNET
 
             this.Venues = new VenuesApi(this);
             this.Users = new UsersApi(this);
+            this.Checkins = new CheckinsApi(this);
         }
 
 

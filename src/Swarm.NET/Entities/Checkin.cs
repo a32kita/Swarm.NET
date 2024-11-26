@@ -43,6 +43,13 @@ namespace SwarmDotNET.Entities
             set;
         }
 
+        [JsonProperty(PropertyName = "checkinShortUrl")]
+        public string CheckinShortUrl
+        {
+            get;
+            set;
+        }
+
         [JsonProperty(PropertyName = "isMayor")]
         public bool IsMayor
         {
